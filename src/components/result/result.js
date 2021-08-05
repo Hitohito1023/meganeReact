@@ -3,17 +3,16 @@ import { withRouter } from "react-router";
 import NameHeader from './NameHeader';
 import TypeList from './TypeList';
 import ResultList from './resultList';
+import PastResult from './PastResult';
+
 
 function Result() {
-
-
   return (
     <div>
       <NameHeader />
-      {/* <SwitchButton /> */}
       <ResultList />
       <TypeList />
-      {/* <PastResult /> */}
+      <PastResult />
     </div>
   )
 }
