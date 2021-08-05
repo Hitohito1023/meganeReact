@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateResult } from '../../action/action'
 import { withRouter } from 'react-router'
+import ResultChart from './ResultChart'
 
 function ResultList(props) {
-  const results = useSelector(state => state.results.list)
   const dispatch = useDispatch();
 
   useEffect(() => {

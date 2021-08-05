@@ -19,7 +19,39 @@ function TypeList(props) {
   })
 
   return (
-
+    <div>
+      {types.map(type => (
+        <table>
+          <tr>
+            <th colSpan="2">{type.name}</th>
+          </tr>
+          <tr>
+            <td>欲求</td><td>{type.desire}</td>
+          </tr>
+          <tr>
+            <td>Key</td><td>{type.keyword}</td>
+          </tr>
+          <tr>
+            <td>初対面</td><td>{type.impression}</td>
+          </tr>
+          <tr>
+            <td>Happy Word</td><td>{type.happyWord}</td>
+          </tr>
+          <tr>
+            <td>趣向</td><td>{type.detail}</td>
+          </tr>
+          <tr>
+            <td>ストレス</td><td>{type.stress}</td>
+          </tr>
+          <tr>
+            <td>強み</td><td>{type.strength}</td>
+          </tr>
+          <tr>
+            <td>課題</td><td>{type.weekness}</td>
+          </tr>
+        </table>
+      ))}
+    </div>
   )
 }
 

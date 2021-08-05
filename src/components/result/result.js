@@ -1,5 +1,8 @@
 import React from 'react'
 import { withRouter } from "react-router";
+import NameHeader from './NameHeader';
+import TypeList from './TypeList';
+import ResultList from './resultList';
 
 function Result() {
 
@@ -7,10 +10,10 @@ function Result() {
   return (
     <div>
       <NameHeader />
-      <SwitchButton />
+      {/* <SwitchButton /> */}
       <ResultList />
       <TypeList />
-      <PastResult />
+      {/* <PastResult /> */}
     </div>
   )
 }

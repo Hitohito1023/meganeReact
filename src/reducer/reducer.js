@@ -1,3 +1,5 @@
+import * as Actions from "../action/action"
+
 const defaultResultState = {
   results: {
     list: []
@@ -10,21 +12,21 @@ const defaultTypeState = {
   }
 }
 
-export default function ResultReducer = (state = defaultResultState.results, action) => {
+export const ResultReducer = ( state = defaultResultState.results, action) => {
   switch (action.type) {
-    case 'UPDATE_RESULT':
+    case (Actions.UPDATE_RESULT):
       return {
         ...state,
         list: action.payload
-      };
+      }
     default:
       return state;
   }
 }
 
-export default function TypeReducer = (state = defaultTypeState.types, action) => {
+export const TypeReducer = (state = defaultTypeState.types, action) => {
   switch (action.type) {
-    case 'UPDATE_TYPE':
+    case (Actions.UPDATE_TYPE):
       return {
         ...state,
         list: action.payload

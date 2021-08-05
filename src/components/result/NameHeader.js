@@ -10,4 +10,4 @@ function NameHeader(props) {
   )
 }
 
-export default  withRouter(NameHeader);
+export default withRouter(NameHeader);
