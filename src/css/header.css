@@ -1,0 +1,30 @@
+.main-nav{
+    display: flex;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+
+.main-nav li{
+    margin-left: 36px;
+}
+
+.main-nav a{
+    color: #432;
+}
+
+.main-nav a:hover{
+    color: #0bd;
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
