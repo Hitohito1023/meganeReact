@@ -35,6 +35,7 @@ class Login extends Component {
                     response.json()
                         .then(json => {
                             this.action.login(json);
+                            this.action.loginState(true);
                             //this.action.loginState(true);
                             cookies.set('user', json, { path: "/" });
                             cookies.set('isSignedIn', true, { path: "/" });
@@ -42,7 +43,6 @@ class Login extends Component {
                         this.setState({
                             isMissLogin: false
                         })
-                        console.log(cookies.get('isSignedIn'));
                         window.location.href = "../"
                 } else {
                     this.setState({

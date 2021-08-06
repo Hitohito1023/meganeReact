@@ -56,7 +56,7 @@ export const loginUserReducer = (state = defaultLoginUserState.loginUser, action
             return state;
     }
 }
-/*export const loginReducer = (state = defaultLoginState.isLogined, action) => {
+export const loginReducer = (state = defaultLoginState.isLogined, action) => {
     switch (action.type) {
         case (actions.LOGIN_STATE):
             return {
@@ -67,4 +67,4 @@ export const loginUserReducer = (state = defaultLoginUserState.loginUser, action
             return state;
     }
 
-}*/
+}
