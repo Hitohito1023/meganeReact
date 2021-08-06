@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './components/header'
-
-import Auth from './components/user/auth'
+import{ useCookies } from "react-cookie"
 
 import top from './components/main/top';
 import login from './components/user/login';
@@ -18,7 +17,7 @@ function App() {
     <Header/>
       <Switch>
       <Route exact path='/login' component={login} />
-      <Auth>
+      {useCookies('isSignedIn') ?
         <Switch>
         <Route path='/' component={top} />
         <Route path='/users/edit' component={edit} />
@@ -26,7 +25,7 @@ function App() {
         <Route path='/users/select' component={select} />
         <Route path='/signup' component={signup} />
         </Switch>
-      </Auth>
+      :<Redirect to={'/login'} />}
         
       </Switch>
     </BrowserRouter>

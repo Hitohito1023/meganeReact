@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { withRouter } from "react-router";
+import { withCookies } from 'react-cookie';
 
 class Login extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class Login extends Component {
 
     // ログインボタン
     loginSubmit() {
+        const { cookies } = this.props;
         const data = { account: this.state.account, password: this.state.password };
         fetch("http://localhost:8080/user/login", {
             headers: {
@@ -33,11 +35,14 @@ class Login extends Component {
                     response.json()
                         .then(json => {
                             this.action.login(json);
-                            this.action.loginState(true);
+                            //this.action.loginState(true);
+                            cookies.set('user', json, { path: "/" });
+                            cookies.set('isSignedIn', true, { path: "/" });
                         })
                         this.setState({
                             isMissLogin: false
                         })
+                        console.log(cookies.get('isSignedIn'));
                         window.location.href = "../"
                 } else {
                     this.setState({
@@ -84,6 +89,7 @@ class Login extends Component {
 
 Login.propTypes = {
     dispatch: PropTypes.func,
+    cookies: PropTypes.any,
     user: PropTypes.any,
     isSignedIn: PropTypes.bool,
     loginUser: PropTypes.any
@@ -93,4 +99,4 @@ function mapStateToProps(state) {
     return state;
 }
 
-export default withRouter(connect(mapStateToProps)(Login));
+export default withCookies(withRouter(connect(mapStateToProps)(Login)));

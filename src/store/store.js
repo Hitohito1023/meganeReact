@@ -7,7 +7,7 @@ export default function createStore(){
       results: resultReducer,
       types: typeReducer,
       loginUser: loginUserReducer,
-      loginState: loginReducer
+      //isLogined: loginReducer
     })
   )
 }

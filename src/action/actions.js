@@ -16,10 +16,10 @@ export function updateType(type) {
     payload: type
   }
 }
-export function login(user) {
+export function login(loginUser) {
   return {
     type: LOGIN,
-    user: user,
+    loginUser: loginUser,
   }
 }
 

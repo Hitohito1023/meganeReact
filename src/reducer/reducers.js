@@ -13,15 +13,11 @@ const defaultTypeState = {
 }
 
 const defaultLoginUserState = {
-    loginUser: {
-        user: [],
-    }
+    loginUser: []
 }
 
 const defaultLoginState = {
-    loginState: {
-        isLogined: false
-    }
+    isLogined: false
 }
 
 export const resultReducer = (state = defaultResultState.results, action) => {
@@ -54,13 +50,13 @@ export const loginUserReducer = (state = defaultLoginUserState.loginUser, action
         case (actions.LOGIN):
             return {
                 ...state,
-                user: action.user
+                loginUser: action.loginUser
             };
         default:
             return state;
     }
 }
-export const loginReducer = (state = defaultLoginState.loginState, action) => {
+/*export const loginReducer = (state = defaultLoginState.isLogined, action) => {
     switch (action.type) {
         case (actions.LOGIN_STATE):
             return {
@@ -70,4 +66,5 @@ export const loginReducer = (state = defaultLoginState.loginState, action) => {
         default:
             return state;
     }
-}
+
+}*/
