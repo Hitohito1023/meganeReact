@@ -1,4 +1,4 @@
-import * as Actions from "../action/actions"
+import * as actions from "../action/actions"
 
 const defaultResultState = {
     results: {
@@ -12,16 +12,21 @@ const defaultTypeState = {
     }
 }
 
+const defaultLoginUserState = {
+    loginUser: {
+        user: [],
+    }
+}
+
 const defaultLoginState = {
     loginState: {
-        user: [],
-        isLogin: false,
+        isLogined: false
     }
 }
 
 export const resultReducer = (state = defaultResultState.results, action) => {
     switch (action.type) {
-        case (Actions.UPDATE_RESULT):
+        case (actions.UPDATE_RESULT):
             return {
                 ...state,
                 list: action.payload
@@ -33,7 +38,7 @@ export const resultReducer = (state = defaultResultState.results, action) => {
 
 export const typeReducer = (state = defaultTypeState.types, action) => {
     switch (action.type) {
-        case (Actions.UPDATE_TYPE):
+        case (actions.UPDATE_TYPE):
             return {
                 ...state,
                 list: action.payload
@@ -44,19 +49,23 @@ export const typeReducer = (state = defaultTypeState.types, action) => {
 }
 
 
+export const loginUserReducer = (state = defaultLoginUserState.loginUser, action) => {
+    switch (action.type) {
+        case (actions.LOGIN):
+            return {
+                ...state,
+                user: action.user
+            };
+        default:
+            return state;
+    }
+}
 export const loginReducer = (state = defaultLoginState.loginState, action) => {
     switch (action.type) {
-        case (Actions.LOGIN):
+        case (actions.LOGIN_STATE):
             return {
                 ...state,
-                loginUser: action.payload,
-                isLogIn: true,
-            };
-        case (Actions.LOGOUT):
-            return {
-                ...state,
-                loginUser: action.payload, //payload=[]
-                isLogIn: false,
+                isLogined: action.isLogined
             };
         default:
             return state;

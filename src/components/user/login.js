@@ -33,6 +33,7 @@ class Login extends Component {
                     response.json()
                         .then(json => {
                             this.action.login(json);
+                            this.action.loginState(true);
                         })
                         this.setState({
                             isMissLogin: false

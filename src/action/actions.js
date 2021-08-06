@@ -1,7 +1,7 @@
 export const UPDATE_RESULT = "UPDATE_RESULT";
 export const UPDATE_TYPE = "UPDATE_TYPE";
 export const LOGIN = "LOGIN";
-export const LOGOUT = "LOGOUT";
+export const LOGIN_STATE = "LOGIN_STATE";
 
 export function updateResult(result) {
   return {
@@ -17,18 +17,16 @@ export function updateType(type) {
   }
 }
 export function login(user) {
-    return {
-        type: LOGIN,
-        payload: user,
-        isLogin: true
-    }
+  return {
+    type: LOGIN,
+    user: user,
+  }
 }
 
-export function logout() {
-    return {
-        type: LOGOUT,
-        payload: [],
-        isLogin: false,
-    }
+export function loginState(bool) {
+  return {
+    type: LOGIN_STATE,
+    isLogined: bool,
+  }
 }
 
