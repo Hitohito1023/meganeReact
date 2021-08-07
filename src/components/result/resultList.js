@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { updateResult } from '../../action/actions'
+import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router'
 import ResultChart from './ResultChart'
 
 function ResultList(props) {
-  const dispatch = useDispatch();
+  const [resultList, setResultList] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:8080/result/get", {
       method: "GET"
     })
-    .then((response) => {
-      response.json().then(json => {
-        dispatch(updateResult(json))
-      })
-    })
-  })
+    .then(response => response.json())
+    .then(data => setResultList(data))
+  }, []);
 
   return (
     <div>
-      <ResultChart />
-      <a href="/diagnose">診断する</a>
+      {resultList && <ResultChart resultList={resultList} />}
+      <div className="text-center my-5">
+        <a href="/users/select" className="diagnose-button">　診断する　</a>
+      </div>
+      
     </div>
   )
 }

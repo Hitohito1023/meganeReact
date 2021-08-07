@@ -1,0 +1,48 @@
+/********************** TypeList.jsのcss **************************/
+details {
+    margin: 10px 0;
+}
+
+summary {
+    font-size: 20px;
+    background-color: #343a40;
+    padding: 5px 10px;
+    color: #FFF;
+}
+
+.type-contents {
+    margin: 50px 0;
+}
+
+
+/********************** ResultChart.jsのcss **************************/
+.recharts-wrapper {
+    margin: 20px auto;
+}
+
+
+/********************** resultList.jsのcss **************************/
+.diagnose-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    background-color: #eb6100;
+    border-bottom: 5px solid #b84c00;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.diagnose-button:hover {
+    transition: all .2s linear;
+    text-decoration: none;
+    margin-top: 3px;
+    color: #fff;
+    background: #f56500;
+    border-bottom: 2px solid #b84c00;
+}
+
+
+
+  
