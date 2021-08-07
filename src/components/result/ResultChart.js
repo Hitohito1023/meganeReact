@@ -1,11 +1,15 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
-import { useSelector } from "react-redux";
 import SwitchButton from './SwitchButton';
+import { useDispatch } from 'react-redux'
+import { updateResult } from '../../action/actions'
 
 function ResultChart(props) {
-  const results = useSelector(state => state.results.list)
+  const results = props.resultList;
+  const dispatch = useDispatch();
+
+  dispatch(updateResult(results))
 
   // 表示するデータを配列として定義
   const data = [
@@ -14,6 +18,8 @@ function ResultChart(props) {
       {subject: 'クリエイト', A: 10, B: 3, fullMark: 20},
       {subject: 'ボランティア', A: 12, B: 5, fullMark: 20}
   ];
+
+  console.log(results[1].analyzeType)
 
   return (
     <>
