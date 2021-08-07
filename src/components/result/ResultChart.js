@@ -40,25 +40,11 @@ function ResultChart({resultList}) {
   }
 
   // 表示するデータを配列として定義
-  // const data = [
-  //     {subject: 'ドライブ', A: 3, B: 20, fullMark: 20},
-  //     {subject: 'アナライズ', A: 5, B: 2, fullMark: 20},
-  //     {subject: 'クリエイト', A: 10, B: 3, fullMark: 20},
-  //     {subject: 'ボランティア', A: 12, B: 5, fullMark: 20}
-  // ];
-
-  // const data = [
-  //     {subject: 'ドライブ', A: newData.drive, B: 20, fullMark: 20},
-  //     {subject: 'アナライズ', A: newData.analyze, B: 2, fullMark: 20},
-  //     {subject: 'クリエイト', A: newData.create, B: 3, fullMark: 20},
-  //     {subject: 'ボランティア', A: newData.volunteer, B: 5, fullMark: 20}
-  // ];
-
-    const data = [
-      {type: 'ドライブ', A: newData.drive, B: pastData.drive, fullMark: 20},
-      {type: 'アナライズ', A: newData.analyze, B: pastData.analyze, fullMark: 20},
-      {type: 'クリエイト', A: newData.create, B: pastData.create, fullMark: 20},
-      {type: 'ボランティア', A: newData.volunteer, B: pastData.volunteer, fullMark: 20}
+  const data = [
+    {type: 'ドライブ', A: newData.drive, B: pastData.drive, fullMark: 20},
+    {type: 'アナライズ', A: newData.analyze, B: pastData.analyze, fullMark: 20},
+    {type: 'クリエイト', A: newData.create, B: pastData.create, fullMark: 20},
+    {type: 'ボランティア', A: newData.volunteer, B: pastData.volunteer, fullMark: 20}
   ];
 
   return (
@@ -88,12 +74,12 @@ function ResultChart({resultList}) {
             <Radar
                 name="最新"  // そのチャートが誰のデータか指定(チャート下にここで指定した値が表示される)
                 dataKey="A"   // 表示する値と対応するdata内のキー
-                stroke="#8884d8"  // レーダーの外枠の色
-                fill="#8884d8"  // レーダー内の色
-                fillOpacity={0.6}  // レーダー内の色の濃さ(1にすると濃さMAX)
+                stroke="#FF9503"  // レーダーの外枠の色
+                fill="#FFC612"  // レーダー内の色
+                fillOpacity={0.8}  // レーダー内の色の濃さ(1にすると濃さMAX)
             />
             {/* ２個目のレーダー */}
-            <Radar name="過去" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.3} />
+            <Radar name="過去" dataKey="B" stroke="#00CFF0" fill="#00E3F0" fillOpacity={0.2} />
 
             {/* グラフの下のA,Bの表記 */}
             <Legend />

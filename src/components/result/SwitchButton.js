@@ -10,7 +10,7 @@ function SwitchButton({setPrevResult, setNextResult, showData}) {
   return(
     <div className="text-center">
       <button onClick={() => setPrevResult()}>◀</button>
-      <strong>{date}実施分</strong>
+      <strong>　{date}実施分　</strong>
       <button onClick={() => setNextResult()}>▶</button>
     </div>
   )

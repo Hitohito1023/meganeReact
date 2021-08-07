@@ -16,8 +16,8 @@ function ResultList(props) {
   return (
     <div>
       {resultList && <ResultChart resultList={resultList} />}
-      <div className="text-center">
-        <a href="/diagnose">診断する</a>
+      <div className="text-center my-5">
+        <a href="/users/select" className="diagnose-button">　診断する　</a>
       </div>
       
     </div>

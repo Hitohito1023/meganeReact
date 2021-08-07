@@ -10,7 +10,7 @@ function Top() {
         <Col md="1" />
         <Col md="10">
           <div>
-            <p className="text-right">お疲れ様です! loginUserさん</p>
+            <p className="text-right mt-4">お疲れ様です! loginUserさん</p>
             <Result />
           </div>
         </Col>
