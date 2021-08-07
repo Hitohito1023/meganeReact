@@ -1,13 +1,22 @@
 import React from 'react'
 import { withRouter } from "react-router";
 import Result from '../result/result';
+import { Row, Col } from 'react-bootstrap';
 
 function Top() {
   return (
-    <div>
-      <p>お疲れ様です! loginUserさん</p>
-      <Result />
-    </div>
+    <>
+      <Row>
+        <Col md="1" />
+        <Col md="10">
+          <div>
+            <p className="text-right">お疲れ様です! loginUserさん</p>
+            <Result />
+          </div>
+        </Col>
+        <Col md="1" />
+      </Row>
+    </>
   )
 }
 
