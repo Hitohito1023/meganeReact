@@ -18,7 +18,7 @@ function TypeList(props) {
         dispatch(updateType(json))
       })
     })
-  })
+  },[])
 
   return (
     <Row>

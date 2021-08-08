@@ -24,4 +24,4 @@ function ResultList(props) {
   )
 }
 
-export default  withRouter(ResultList);
+export default withRouter(ResultList);
