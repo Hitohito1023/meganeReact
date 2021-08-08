@@ -5,6 +5,7 @@ import TypeList from './TypeList';
 import ResultList from './resultList';
 import PastResult from './PastResult';
 
+
 function Result() {
   return (
     <div>

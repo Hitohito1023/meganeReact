@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import { withRouter } from 'react-router'
 import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 import SwitchButton from './SwitchButton';
-import { useDispatch } from 'react-redux'
 import { updateResult } from '../../action/actions'
+import { useDispatch, useSelector } from "react-redux";
 
-function ResultChart({resultList}) {
-  const results = resultList;
-  const dispatch = useDispatch();
+function ResultChart(props) {
+  // const results = resultList;
+  const results = useSelector(state => state.results.list)
+  // const dispatch = useDispatch();
 
-  dispatch(updateResult(results))
+  // dispatch(updateResult(results))
 
   const a = results.length - 1;
 
