@@ -16,17 +16,15 @@ function SelectUser(props) {
     .then(data => setUserResult(data))
   }, []);
 
-  console.log(userResult);
-
   return (
     <div>
 
       
-      {userResult != null && userResult != [] ?
-      
-       <ResultChart resultList={userResult} /> 
+      {userResult === null || userResult.length === 0 ?
+        <p>テスト</p>
+
       :
-       <p>テスト</p>
+       <ResultChart resultList={userResult} />      
       }
     </div>
   )
