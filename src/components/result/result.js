@@ -8,7 +8,7 @@ import PastResult from './PastResult';
 function Result() {
   return (
     <div>
-      <NameHeader />
+      {/* <NameHeader /> */}
       <ResultList />
       <TypeList />
       <PastResult />

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { withRouter } from 'react-router'
 import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, Tooltip } from 'recharts';
 import SwitchButton from './SwitchButton';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { updateResult } from '../../action/actions'
 
 function ResultChart({resultList}) {
@@ -11,9 +11,31 @@ function ResultChart({resultList}) {
 
   dispatch(updateResult(results))
 
+  // const results = useSelector(state => state.results.list);
+
   const a = results.length - 1;
 
-  const [showData, setShowData] = useState(a)
+  const [showData, setShowData] = useState(a);
+
+  const type = (results) => {
+  　var t = []
+    if(results[a].driveFlag){
+      t.push("ドライブ")
+    } 
+    if(results[a].analyzeFlag){
+      t.push("アナライズ")
+    }
+    if(results[a].createFlg){
+      t.push("クリエイト")
+    }
+    if(results[a].volunteerFlg){
+      t.push("ボランティア")
+    } 
+    return t.join("/")
+  }
+
+  console.log(type(results))
+  
 
   const setPrevResult = () => {
     if((showData) > 0)
@@ -39,6 +61,8 @@ function ResultChart({resultList}) {
     volunteer: results[showData].volunteerType
   }
 
+  const date = results[showData].createdDate.slice(0, 10).replace(/-/g, '/')
+
   // 表示するデータを配列として定義
   const data = [
     {type: 'ドライブ', A: newData.drive, B: pastData.drive, fullMark: 20},
@@ -49,6 +73,9 @@ function ResultChart({resultList}) {
 
   return (
     <>
+      <div className="text-center my-5">
+        <h2>現在の{results[0].user.name}さんは、{type(results)}タイプ です</h2>
+      </div>
       <SwitchButton setPrevResult={setPrevResult} setNextResult={setNextResult} showData={showData}/>
       <div className="result-chart">
         <RadarChart  // レーダーチャート全体の設定を記述
@@ -79,7 +106,7 @@ function ResultChart({resultList}) {
                 fillOpacity={0.8}  // レーダー内の色の濃さ(1にすると濃さMAX)
             />
             {/* ２個目のレーダー */}
-            <Radar name="過去" dataKey="B" stroke="#00CFF0" fill="#00E3F0" fillOpacity={0.2} />
+            <Radar name={date} dataKey="B" stroke="#00CFF0" fill="#00E3F0" fillOpacity={0.2} />
 
             {/* グラフの下のA,Bの表記 */}
             <Legend />

@@ -20,4 +20,4 @@ function Top() {
   )
 }
 
-export default  withRouter(Top);
+export default withRouter(Top);
