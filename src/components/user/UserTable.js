@@ -3,19 +3,37 @@ import { withRouter } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { Row, Col } from 'react-bootstrap';
 import { useParams, useHistory, useLocation, Link } from 'react-router-dom';
-// import { updateResult } from '../../action/actions'
+import { updateUser } from '../../action/actions'
+import UserSearch from './UserSearch'
 
 function UserTable({userList}) {
-  const users = userList;
+  const [users, setUsers] = useState(userList)
   const dispatch = useDispatch();
+  dispatch(updateUser(users))
+  const [name, setName] = useState("");
 
-//   dispatch(updateResult(results))
+  const inputName = (e) => {
+    setName(e.target.value);
+  };
+
+
+
+  const searchUser = (name) => {
+    const u = users.filter(user => user.name.includes(name))
+    return u
+  }
+  
+
+
+
+
+
 
   return (
     <Row>
       <Col md="1" />
       <Col md="10">
-        {/* <UserSort /> */}
+        <input type="text" size="30" value={name} onChange={inputName} />
         <table className="table table-bordered" style={{ width: '100%' }}>
           <thead>
             <tr>

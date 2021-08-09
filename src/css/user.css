@@ -1,0 +1,50 @@
+/********************** signup.jsのcss **************************/
+.signup-title {
+  text-align: center;
+  margin: 40px 0;
+}
+.signup-table tr {
+  height: 100px;
+  font-size:20px;
+  text-align: center;
+  
+}
+
+.signup-table th {
+  width: 200px;
+  vertical-align: middle; 
+}
+
+.signup-table td {
+  vertical-align: middle; 
+}
+
+.admin-select {
+  margin: 50px;
+}
+
+.signup-button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+  background-color: #28a745;
+  border-bottom: 5px solid 	#2E8B57;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.signup-button:hover {
+  transition: all .2s linear;
+  text-decoration: none;
+  margin-top: 3px;
+  color: #fff;
+  background: #28a745;
+  border-bottom: 2px solid 	#2E8B57;
+}
+
+/********************** select.jsのcss **************************/
+.no-test-name {
+  margin-top: 300px;
+}

@@ -2,6 +2,7 @@ export const UPDATE_RESULT = "UPDATE_RESULT";
 export const UPDATE_TYPE = "UPDATE_TYPE";
 export const LOGIN = "LOGIN";
 export const LOGIN_STATE = "LOGIN_STATE";
+export const UPDATE_USER = "UPDATE_USER";
 
 export function updateResult(result) {
   return {
@@ -27,6 +28,13 @@ export function loginState(bool) {
   return {
     type: LOGIN_STATE,
     isLogined: bool,
+  }
+}
+
+export function updateUser(user) {
+  return {
+    type: UPDATE_USER,
+    payload: user
   }
 }
 
