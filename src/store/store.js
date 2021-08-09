@@ -1,5 +1,5 @@
 import { createStore as reduxCreateStore, combineReducers } from 'redux'
-import { resultReducer, typeReducer, loginUserReducer, loginReducer } from '../reducer/reducers';
+import { resultReducer, typeReducer, loginUserReducer, loginReducer, userReducer } from '../reducer/reducers';
 
 export default function createStore(){
   return reduxCreateStore(
@@ -8,6 +8,7 @@ export default function createStore(){
       types: typeReducer,
       loginUser: loginUserReducer,
       isLogined: loginReducer,
+      users: userReducer
     })
   )
 }

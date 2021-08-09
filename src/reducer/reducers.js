@@ -12,6 +12,12 @@ const defaultTypeState = {
     }
 }
 
+const defaultUserState = {
+    users: {
+        list: []
+    }
+}
+
 const defaultLoginUserState = {
     loginUser: []
 }
@@ -44,6 +50,17 @@ export const typeReducer = (state = defaultTypeState.types, action) => {
     }
 }
 
+export const userReducer = (state = defaultUserState.users, action) => {
+    switch (action.type) {
+        case (actions.UPDATE_USER):
+            return {
+                ...state,
+                list: action.payload
+            }
+        default:
+            return state;
+    }
+}
 
 export const loginUserReducer = (state = defaultLoginUserState.loginUser, action) => {
     switch (action.type) {
